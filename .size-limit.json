@@ -1,0 +1,7 @@
+[
+  {
+    "name": "JS total (gzip)",
+    "path": ".next/static/chunks/**/*.js",
+    "gzip": true
+  }
+]

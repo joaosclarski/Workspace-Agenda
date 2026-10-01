@@ -1,0 +1,7 @@
+# Regras padrão do gitleaks; ignora apenas artefatos gerados e dependências.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Artefatos gerados e dependências"
+paths = ['''node_modules''', '''\.next''', '''\.constraints''']

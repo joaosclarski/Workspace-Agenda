@@ -1,0 +1,96 @@
+import type { Space } from "@/types";
+
+const unsplash = (id: string): string =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=75`;
+
+/** Horário de funcionamento (hipótese de produto, ver PRODUCT.md): reservas entre 8h e 22h. */
+export const OPENING_HOURS = { open: 8, close: 22 } as const;
+
+export const SPACES: Space[] = [
+  {
+    id: "paulista-boardroom",
+    name: "Sala Horizonte",
+    kind: "Sala de reunião",
+    neighborhood: "Av. Paulista",
+    city: "São Paulo",
+    capacity: 10,
+    pricePerHour: 120,
+    rating: 4.9,
+    reviews: 128,
+    image: unsplash("1497366216548-37526070297c"),
+    imageAlt: "Sala de reunião clara com mesa longa e janelas amplas",
+    amenities: ["wifi", "monitor", "videocall", "coffee"],
+  },
+  {
+    id: "pinheiros-coworking",
+    name: "Estúdio Pinheiros",
+    kind: "Co-working",
+    neighborhood: "Pinheiros",
+    city: "São Paulo",
+    capacity: 1,
+    pricePerHour: 25,
+    rating: 4.8,
+    reviews: 214,
+    image: unsplash("1527192491265-7e15c55b1ed2"),
+    imageAlt: "Área de co-working com mesas compartilhadas e luz natural",
+    amenities: ["wifi", "coffee"],
+  },
+  {
+    id: "faria-lima-focus",
+    name: "Sala Foco",
+    kind: "Sala privativa",
+    neighborhood: "Faria Lima",
+    city: "São Paulo",
+    capacity: 4,
+    pricePerHour: 65,
+    rating: 4.7,
+    reviews: 86,
+    image: unsplash("1497366811353-6870744d04b2"),
+    imageAlt: "Sala privativa com mesa de trabalho e cadeiras ergonômicas",
+    amenities: ["wifi", "monitor", "whiteboard"],
+  },
+  {
+    id: "botafogo-meeting",
+    name: "Sala Enseada",
+    kind: "Sala de reunião",
+    neighborhood: "Botafogo",
+    city: "Rio de Janeiro",
+    capacity: 8,
+    pricePerHour: 95,
+    rating: 4.9,
+    reviews: 97,
+    image: unsplash("1517502884422-41eaead166d4"),
+    imageAlt: "Sala de reunião moderna com tela para apresentações",
+    amenities: ["wifi", "videocall", "whiteboard", "coffee"],
+  },
+  {
+    id: "savassi-loft",
+    name: "Loft Savassi",
+    kind: "Co-working",
+    neighborhood: "Savassi",
+    city: "Belo Horizonte",
+    capacity: 1,
+    pricePerHour: 20,
+    rating: 4.6,
+    reviews: 152,
+    image: unsplash("1524758631624-e2822e304c36"),
+    imageAlt: "Loft de co-working com plantas e mesas de madeira",
+    amenities: ["wifi", "coffee", "parking"],
+  },
+  {
+    id: "batel-executive",
+    name: "Sala Executiva Batel",
+    kind: "Sala privativa",
+    neighborhood: "Batel",
+    city: "Curitiba",
+    capacity: 6,
+    pricePerHour: 80,
+    rating: 4.8,
+    reviews: 63,
+    image: unsplash("1556761175-5973dc0f32e7"),
+    imageAlt: "Sala executiva com mesa de reunião e iluminação suave",
+    amenities: ["wifi", "monitor", "videocall", "parking"],
+  },
+];
+
+export const CITIES = [...new Set(SPACES.map((space) => space.city))];
